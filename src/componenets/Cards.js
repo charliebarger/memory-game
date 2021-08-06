@@ -1,5 +1,7 @@
 import React from "react";
 import "../App";
+import { useState } from "react";
+import { uniqueId } from "lodash";
 
 export default function Cards() {
   const characters = [
@@ -19,8 +21,19 @@ export default function Cards() {
     { name: "Ike", image: "/images/characters/ike.png" },
     { name: "Wendy", image: "/images/characters/wendy.png" },
   ];
-  return characters.map((character) => (
-    <div className="card">
+  characters.forEach((character) => {
+    character.uniqueId = uniqueId("character_");
+  });
+  console.log(characters);
+  const [chars, setChars] = useState(characters);
+
+  const shuffle = () => {
+    let newOrder = chars.sort(() => Math.random() - 0.5);
+    console.log(newOrder);
+    setChars(newOrder);
+  };
+  return chars.map((character) => (
+    <div className="card" onClick={shuffle} key={character.uniqueId}>
       <div className="card-wrapper">
         <img
           alt={character.name}
