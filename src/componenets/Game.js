@@ -6,6 +6,7 @@ import { getCharacterList } from "../resources/cardInfo";
 export default function Game() {
   const [chars, setChars] = useState(getCharacterList);
   const [newSelection, setNewSelection] = useState(true);
+  const [gameOver, setGameOver] = useState(false);
   useEffect(() => {
     if (newSelection) {
       setNewSelection(false);
@@ -18,11 +19,19 @@ export default function Game() {
     }
   }, [chars, newSelection]);
 
+  useEffect(() => {
+    if (gameOver === true) {
+      alert("Game Over");
+      setChars(getCharacterList);
+      setGameOver(false);
+    }
+  }, [gameOver]);
+
   function toggleSelected(e) {
     let newArrayList = chars;
     newArrayList.forEach((item) => {
       if (item.uniqueId === e.target.dataset.key) {
-        item.selected = true;
+        item.selected = item.selected === false ? true : setGameOver(true);
       }
     });
     setNewSelection(true);
@@ -31,7 +40,7 @@ export default function Game() {
   return (
     <div className="App">
       <Header />
-      <Scoreboard />
+      <Scoreboard characters={chars} gameOver={gameOver} />
       <Gameboard characters={chars} handleEvent={toggleSelected} />
     </div>
   );
