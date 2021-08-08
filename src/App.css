@@ -162,3 +162,9 @@ p {
     text-align: center;
   }
 }
+
+.card-name,
+.card-image,
+.card-wrapper {
+  pointer-events: none;
+}
