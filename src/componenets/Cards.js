@@ -1,38 +1,41 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import "../App";
-import { getCharacterList } from "../resources/cardInfo";
+// import { getCharacterList } from "../resources/cardInfo";
 
-export default function Cards() {
-  const [chars, setChars] = useState(getCharacterList);
-  const [newSelection, setNewSelection] = useState(true);
-  useEffect(() => {
-    if (newSelection) {
-      setNewSelection(false);
-      const shuffle = () => {
-        let newOrder = chars;
-        newOrder.sort(() => Math.random() - 0.5);
-        setChars([...newOrder]);
-      };
-      shuffle();
-    }
-  }, [chars, newSelection]);
+export default function Cards(props) {
+  const { characters, handleEvent } = props;
+  console.log(characters);
+  console.log(handleEvent);
+  // const [chars, setChars] = useState(getCharacterList);
+  // const [newSelection, setNewSelection] = useState(true);
+  // useEffect(() => {
+  //   if (newSelection) {
+  //     setNewSelection(false);
+  //     const shuffle = () => {
+  //       let newOrder = chars;
+  //       newOrder.sort(() => Math.random() - 0.5);
+  //       setChars([...newOrder]);
+  //     };
+  //     shuffle();
+  //   }
+  // }, [chars, newSelection]);
 
-  function toggleSelected(e, arrayList) {
-    let newArrayList = arrayList;
-    newArrayList.forEach((item) => {
-      if (item.uniqueId === e.target.dataset.key) {
-        item.selected = true;
-        console.log(newArrayList);
-      }
-    });
-    setNewSelection(true);
-    setChars([...newArrayList]);
-  }
+  // function toggleSelected(e, arrayList) {
+  //   let newArrayList = arrayList;
+  //   newArrayList.forEach((item) => {
+  //     if (item.uniqueId === e.target.dataset.key) {
+  //       item.selected = true;
+  //       console.log(newArrayList);
+  //     }
+  //   });
+  //   setNewSelection(true);
+  //   setChars([...newArrayList]);
+  // }
 
-  return chars.map((character) => (
+  return characters.map((character) => (
     <div
       className="card"
-      onClick={(event) => toggleSelected(event, chars)}
+      onClick={handleEvent}
       key={character.uniqueId}
       data-key={character.uniqueId}
     >
