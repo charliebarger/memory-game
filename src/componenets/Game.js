@@ -43,9 +43,6 @@ export default function Game() {
     setChars([...newArrayList]);
   }
 
-  const resetGame = () => {
-    setGameOver(false);
-  };
   return (
     <div className="App">
       <Header />
