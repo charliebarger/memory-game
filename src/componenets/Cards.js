@@ -1,46 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../App";
-import { useState } from "react";
-import { uniqueId } from "lodash";
+import { getCharacterList } from "../resources/cardInfo";
 
 export default function Cards() {
-  const characters = [
-    { name: "Kenny", image: "/images/characters/kenny-mccormick.png" },
-    { name: "Cartman", image: "/images/characters/eric-cartman.png" },
-    { name: "Butters", image: "/images/characters/butters-stotch.png" },
-    { name: "Chef", image: "/images/characters/chef-2.png" },
-    { name: "Jimmy", image: "/images/characters/jimmy-valmer.png" },
-    { name: "Kyle", image: "/images/characters/kyle-broflovski.png" },
-    { name: "Mr. Hankey", image: "/images/characters/mr-hankey.png" },
-    {
-      name: "Barbrady",
-      image: "/images/characters/officer-barbrady.png",
-    },
-    { name: "Stan", image: "/images/characters/stan-marsh.png" },
-    { name: "Towelie", image: "/images/characters/towelie.png" },
-    { name: "Ike", image: "/images/characters/ike.png" },
-    { name: "Wendy", image: "/images/characters/wendy.png" },
-  ];
-  characters.forEach((character) => {
-    character.uniqueId = uniqueId("character_");
-  });
-  console.log(characters);
-  const [chars, setChars] = useState(characters);
+  const [chars, setChars] = useState(getCharacterList);
+  const [newSelection, setNewSelection] = useState(true);
+  useEffect(() => {
+    if (newSelection) {
+      setNewSelection(false);
+      const shuffle = () => {
+        let newOrder = chars;
+        newOrder.sort(() => Math.random() - 0.5);
+        setChars([...newOrder]);
+      };
+      shuffle();
+    }
+  }, [chars, newSelection]);
 
-  const shuffle = () => {
-    let newOrder = chars.sort(() => Math.random() - 0.5);
-    console.log(newOrder);
-    setChars(newOrder);
-  };
+  function toggleSelected(e, arrayList) {
+    let newArrayList = arrayList;
+    newArrayList.forEach((item) => {
+      if (item.uniqueId === e.target.dataset.key) {
+        item.selected = true;
+        console.log(newArrayList);
+      }
+    });
+    setNewSelection(true);
+    setChars([...newArrayList]);
+  }
+
   return chars.map((character) => (
-    <div className="card" onClick={shuffle} key={character.uniqueId}>
+    <div
+      className="card"
+      onClick={(event) => toggleSelected(event, chars)}
+      key={character.uniqueId}
+      data-key={character.uniqueId}
+    >
       <div className="card-wrapper">
         <img
+          className="card-image"
           alt={character.name}
           src={`${process.env.PUBLIC_URL + character.image}`}
         />
       </div>
-      <p>{character.name}</p>
+      <p className="card-name">{character.name}</p>
     </div>
   ));
 }
