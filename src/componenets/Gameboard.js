@@ -3,7 +3,6 @@ import "../App";
 import Cards from "./Cards";
 
 export default function Gameboard(props) {
-  console.log(props);
   return (
     <div className="gamebaord-wrapper">
       <div className="gameboard">

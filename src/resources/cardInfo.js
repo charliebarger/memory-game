@@ -27,6 +27,5 @@ const assignId = (arrayList) => {
 };
 
 export function getCharacterList() {
-  console.log("reached");
   return assignId(characters);
 }

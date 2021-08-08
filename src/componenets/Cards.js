@@ -4,8 +4,6 @@ import "../App";
 
 export default function Cards(props) {
   const { characters, handleEvent } = props;
-  console.log(characters);
-  console.log(handleEvent);
   // const [chars, setChars] = useState(getCharacterList);
   // const [newSelection, setNewSelection] = useState(true);
   // useEffect(() => {

@@ -23,7 +23,6 @@ export default function Game() {
     newArrayList.forEach((item) => {
       if (item.uniqueId === e.target.dataset.key) {
         item.selected = true;
-        console.log(newArrayList);
       }
     });
     setNewSelection(true);
