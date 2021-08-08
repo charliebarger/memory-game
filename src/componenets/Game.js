@@ -7,6 +7,7 @@ export default function Game() {
   const [chars, setChars] = useState(getCharacterList);
   const [newSelection, setNewSelection] = useState(true);
   const [gameOver, setGameOver] = useState(false);
+  const [lastSelected, setLastSelected] = useState();
   useEffect(() => {
     if (newSelection) {
       setNewSelection(false);
@@ -21,9 +22,7 @@ export default function Game() {
 
   useEffect(() => {
     if (gameOver === true) {
-      alert("Game Over");
       setChars(getCharacterList);
-      setGameOver(false);
     }
   }, [gameOver]);
 
@@ -31,17 +30,33 @@ export default function Game() {
     let newArrayList = chars;
     newArrayList.forEach((item) => {
       if (item.uniqueId === e.target.dataset.key) {
-        item.selected = item.selected === false ? true : setGameOver(true);
+        if (!item.selected) {
+          item.selected = true;
+        } else {
+          console.log(item.name);
+          setLastSelected(item.name);
+          setGameOver(true);
+        }
       }
     });
     setNewSelection(true);
     setChars([...newArrayList]);
   }
+
+  const resetGame = () => {
+    setGameOver(false);
+  };
   return (
     <div className="App">
       <Header />
       <Scoreboard characters={chars} gameOver={gameOver} />
-      <Gameboard characters={chars} handleEvent={toggleSelected} />
+      <Gameboard
+        characters={chars}
+        handleEvent={toggleSelected}
+        gameOver={gameOver}
+        resetGame={setGameOver}
+        lastPick={lastSelected}
+      />
     </div>
   );
 }
