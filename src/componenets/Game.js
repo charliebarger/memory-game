@@ -8,7 +8,7 @@ export default function Game() {
   const [newSelection, setNewSelection] = useState(true);
   const [gameOver, setGameOver] = useState(false);
   const [lastSelected, setLastSelected] = useState();
-  const [resetScore, setResetScore] = useState(false);
+  const [score, setScore] = useState(0);
   useEffect(() => {
     if (newSelection) {
       setNewSelection(false);
@@ -22,20 +22,27 @@ export default function Game() {
   }, [chars, newSelection]);
 
   useEffect(() => {
-    if (gameOver === true) {
+    if (gameOver) {
       setNewSelection(true);
       setChars(getCharacterList);
     }
   }, [gameOver]);
-
+  useEffect(() => {
+    console.log(score);
+    if (score === 12) {
+      setGameOver(true);
+    }
+  }, [score]);
   function toggleSelected(e) {
     let newArrayList = chars;
     newArrayList.forEach((item) => {
       if (item.uniqueId === e.target.dataset.key) {
+        console.log(`score: ${score}`);
         if (!item.selected) {
           item.selected = true;
+          setScore((prevScore) => prevScore + 1);
+          console.log(`score: ${score}`);
         } else {
-          console.log(item.name);
           setLastSelected(item.name);
           setGameOver(true);
         }
@@ -45,20 +52,22 @@ export default function Game() {
     setChars([...newArrayList]);
   }
 
+  // if (score === 12) {
+  //   setGameOver(true);
+  // }
+
   return (
     <div className="App">
       <Header />
-      <Scoreboard
-        characters={chars}
-        gameOver={gameOver}
-        resetScore={resetScore}
-      />
+      <Scoreboard characters={chars} gameOver={gameOver} currentScore={score} />
       <Gameboard
         characters={chars}
         handleEvent={toggleSelected}
         gameOver={gameOver}
         resetGame={setGameOver}
+        resetScore={setScore}
         lastPick={lastSelected}
+        score={score}
       />
     </div>
   );

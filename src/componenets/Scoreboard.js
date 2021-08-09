@@ -4,23 +4,13 @@ import "../App";
 export default function Scoreboard(props) {
   const characters = props.characters;
   let currentScore = 0;
-  const [highScore, setHighScore] = useState(currentScore);
-
-  const setScore = () => {
-    characters.forEach((character) => {
-      if (character.selected) {
-        currentScore += 1;
-      }
-    });
-    if (currentScore > highScore) {
-      setHighScore(currentScore);
-    }
-  };
-
-  !props.gameOver ? setScore() : (currentScore = 0);
+  const [highScore, setHighScore] = useState(props.currentScore);
+  if (props.currentScore > highScore) {
+    setHighScore(props.currentScore);
+  }
   return (
     <div className="scoreboard">
-      <span>Current Score: {currentScore}</span>
+      <span>Current Score: {props.currentScore}</span>
       <div className="flex-gap"></div>
       <span>High Score: {highScore}</span>
     </div>
