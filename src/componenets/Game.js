@@ -22,6 +22,7 @@ export default function Game() {
   useEffect(() => {
     if (gameOver === true) {
       alert("Game Over");
+      setNewSelection(true);
       setChars(getCharacterList);
       setGameOver(false);
     }
