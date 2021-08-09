@@ -4,32 +4,6 @@ import "../App";
 
 export default function Cards(props) {
   const { characters, handleEvent } = props;
-  // const [chars, setChars] = useState(getCharacterList);
-  // const [newSelection, setNewSelection] = useState(true);
-  // useEffect(() => {
-  //   if (newSelection) {
-  //     setNewSelection(false);
-  //     const shuffle = () => {
-  //       let newOrder = chars;
-  //       newOrder.sort(() => Math.random() - 0.5);
-  //       setChars([...newOrder]);
-  //     };
-  //     shuffle();
-  //   }
-  // }, [chars, newSelection]);
-
-  // function toggleSelected(e, arrayList) {
-  //   let newArrayList = arrayList;
-  //   newArrayList.forEach((item) => {
-  //     if (item.uniqueId === e.target.dataset.key) {
-  //       item.selected = true;
-  //       console.log(newArrayList);
-  //     }
-  //   });
-  //   setNewSelection(true);
-  //   setChars([...newArrayList]);
-  // }
-
   return characters.map((character) => (
     <div
       className="card"
