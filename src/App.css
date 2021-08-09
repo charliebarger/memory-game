@@ -34,6 +34,7 @@ body,
 }
 
 img {
+  user-select: none;
   height: 100%;
 }
 
