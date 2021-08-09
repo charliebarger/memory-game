@@ -1,6 +1,4 @@
-// import React, { useEffect, useState } from "react";
 import "../App";
-// import { getCharacterList } from "../resources/cardInfo";
 
 export default function Cards(props) {
   const { characters, handleEvent } = props;

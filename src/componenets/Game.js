@@ -52,10 +52,6 @@ export default function Game() {
     setChars([...newArrayList]);
   }
 
-  // if (score === 12) {
-  //   setGameOver(true);
-  // }
-
   return (
     <div className="App">
       <Header />
