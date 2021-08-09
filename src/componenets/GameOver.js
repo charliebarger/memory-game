@@ -1,7 +1,6 @@
 import React from "react";
 import ResetButton from "./ResetButton";
 const GameOver = (props) => {
-  console.log(props);
   let showStatus = props.gameOver ? "showIt" : "hidden";
   return (
     <div className={showStatus}>
