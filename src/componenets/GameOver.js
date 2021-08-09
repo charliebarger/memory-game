@@ -1,5 +1,5 @@
 import React from "react";
-
+import ResetButton from "./ResetButton";
 const GameOver = (props) => {
   console.log(props);
   let showStatus = props.gameOver ? "showIt" : "hidden";
@@ -17,15 +17,13 @@ const GameOver = (props) => {
           src={`${process.env.PUBLIC_URL + "/images/characters/member.png"}`}
         />
       </div>
-      <button
-        className="reset-button"
-        onClick={() => {
+      <ResetButton
+        text="Reset Game"
+        handleEvent={() => {
           props.resetGame(false);
           props.resetScore(0);
         }}
-      >
-        Reset Game
-      </button>
+      />
     </div>
   );
 };
