@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/charliebarger/memory-game/static/css/main.c15faedf.chunk.css",
+    "main.js": "/charliebarger/memory-game/static/js/main.6ed564d1.chunk.js",
+    "main.js.map": "/charliebarger/memory-game/static/js/main.6ed564d1.chunk.js.map",
+    "runtime-main.js": "/charliebarger/memory-game/static/js/runtime-main.dcbd1569.js",
+    "runtime-main.js.map": "/charliebarger/memory-game/static/js/runtime-main.dcbd1569.js.map",
+    "static/js/2.d8125a6d.chunk.js": "/charliebarger/memory-game/static/js/2.d8125a6d.chunk.js",
+    "static/js/2.d8125a6d.chunk.js.map": "/charliebarger/memory-game/static/js/2.d8125a6d.chunk.js.map",
+    "index.html": "/charliebarger/memory-game/index.html",
+    "static/css/main.c15faedf.chunk.css.map": "/charliebarger/memory-game/static/css/main.c15faedf.chunk.css.map",
+    "static/js/2.d8125a6d.chunk.js.LICENSE.txt": "/charliebarger/memory-game/static/js/2.d8125a6d.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/charliebarger/memory-game/static/media/south park 4.68a50dbb.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dcbd1569.js",
+    "static/js/2.d8125a6d.chunk.js",
+    "static/css/main.c15faedf.chunk.css",
+    "static/js/main.6ed564d1.chunk.js"
+  ]
+}
