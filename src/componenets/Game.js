@@ -8,6 +8,7 @@ export default function Game() {
   const [newSelection, setNewSelection] = useState(true);
   const [gameOver, setGameOver] = useState(false);
   const [lastSelected, setLastSelected] = useState();
+  const [resetScore, setResetScore] = useState(false);
   useEffect(() => {
     if (newSelection) {
       setNewSelection(false);
@@ -22,7 +23,6 @@ export default function Game() {
 
   useEffect(() => {
     if (gameOver === true) {
-      alert("Game Over");
       setNewSelection(true);
       setChars(getCharacterList);
     }
@@ -48,7 +48,11 @@ export default function Game() {
   return (
     <div className="App">
       <Header />
-      <Scoreboard characters={chars} gameOver={gameOver} />
+      <Scoreboard
+        characters={chars}
+        gameOver={gameOver}
+        resetScore={resetScore}
+      />
       <Gameboard
         characters={chars}
         handleEvent={toggleSelected}
