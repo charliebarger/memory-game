@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/memory-game/static/css/main.081f3ee5.chunk.css",
+    "main.css": "/memory-game/static/css/main.bf1741bb.chunk.css",
     "main.js": "/memory-game/static/js/main.c57bae98.chunk.js",
     "main.js.map": "/memory-game/static/js/main.c57bae98.chunk.js.map",
     "runtime-main.js": "/memory-game/static/js/runtime-main.b717dcb7.js",
@@ -8,14 +8,14 @@
     "static/js/2.d8125a6d.chunk.js": "/memory-game/static/js/2.d8125a6d.chunk.js",
     "static/js/2.d8125a6d.chunk.js.map": "/memory-game/static/js/2.d8125a6d.chunk.js.map",
     "index.html": "/memory-game/index.html",
-    "static/css/main.081f3ee5.chunk.css.map": "/memory-game/static/css/main.081f3ee5.chunk.css.map",
+    "static/css/main.bf1741bb.chunk.css.map": "/memory-game/static/css/main.bf1741bb.chunk.css.map",
     "static/js/2.d8125a6d.chunk.js.LICENSE.txt": "/memory-game/static/js/2.d8125a6d.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/memory-game/static/media/south park 4.68a50dbb.ttf"
+    "static/media/App.css": "/memory-game/static/media/south-park.68a50dbb.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.b717dcb7.js",
     "static/js/2.d8125a6d.chunk.js",
-    "static/css/main.081f3ee5.chunk.css",
+    "static/css/main.bf1741bb.chunk.css",
     "static/js/main.c57bae98.chunk.js"
   ]
 }
