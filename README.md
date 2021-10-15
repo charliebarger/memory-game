@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# South Park Memory Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+A memory game where the goal is to select all of the characters without selecting the same one twice. If a character is selected twice the game is over. 
 
-In the project directory, you can run:
+> See it Live at [https://charliebarger.github.io/memory-game/](https://charliebarger.github.io/memory-game/)
 
-### `yarn start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Start of Game
+---
+![Start of Game](https://user-images.githubusercontent.com/72449213/130134265-c9d461e1-c550-4c11-879c-192328aeca00.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Lose Game 
+---
+![Lose Game](https://user-images.githubusercontent.com/72449213/130134382-2626a1fd-a4d0-4d89-9d0e-09a2bed00b48.png)
 
-### `yarn test`
+### Win Game
+---
+![Win Game](https://user-images.githubusercontent.com/72449213/130134479-bc681467-0fe1-442a-b406-b4a80613a853.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Objectives & Outcomes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create a single player game using React
+- Further comprehension of stateful logic and the useEffect hook
+- Design an eloquent user experience 
+- Create reusable componenets
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Javascript Framework
+- [React](https://reactjs.org/)
 
-### `yarn eject`
+### More Information 
+- Made as a solution for the Memory Card Project in [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/memory-card)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 
