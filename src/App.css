@@ -1,5 +1,5 @@
-font-face {
-  font-family: "southpark"; /*a name to be used later*/
+@font-face {
+  font-family: southpark; /*a name to be used later*/
   src: url("./resources/fonts/south-park.ttf");
 }
 body {
@@ -23,7 +23,7 @@ body,
 }
 
 .Header {
-  font-family: South-Park;
+  font-family: southpark;
   height: 15vh;
   padding: 20px;
   display: flex;
